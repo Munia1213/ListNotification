@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-        lv_languages.setAdapter(list_adapter);
+
 
 
     }
@@ -54,10 +54,12 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("List Cards");
-        list_adapter = new NotificationListAdapter(this,languages, language_images);
         lv_languages = (ListView) findViewById(R.id.lv_languages);
+        list_adapter = new NotificationListAdapter(this,languages, language_images);
+        lv_languages.setAdapter(list_adapter);
+
     }
 
     @Override
